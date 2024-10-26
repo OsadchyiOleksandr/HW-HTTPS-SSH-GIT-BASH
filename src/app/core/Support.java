@@ -10,18 +10,32 @@ public class Support {
 
     public static BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
 
-    public static String getDataFromUser() throws IOException {
+    public static String getDataFromUser(String message) throws IOException {
+        System.out.println(message);
         return scanner.readLine();
-
     }
 
-    public static double getDoubleFromUser(){
+    public static double getDoubleFromUser(String message){
         double doubleFromUser = 0;
         try{
-            doubleFromUser = Double.parseDouble(Support.getDataFromUser());
+            doubleFromUser = Double.parseDouble(Support.getDataFromUser(message));
         } catch (NumberFormatException e){
             System.out.println("Wrong value. Try again");
-            getDoubleFromUser();
+            Support.getDoubleFromUser(message);
+        } catch (IOException e) {
+            System.out.println("Something wrong");
+            throw new RuntimeException(e);
+        }
+        return doubleFromUser;
+    }
+
+    public static int getIntFromUser(String message) {
+        int doubleFromUser = 0;
+        try {
+            doubleFromUser = Integer.parseInt(Support.getDataFromUser(message));
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong value. Try again");
+            getIntFromUser(message);
         } catch (IOException e) {
             System.out.println("Something wrong");
             throw new RuntimeException(e);

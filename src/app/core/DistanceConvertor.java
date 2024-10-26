@@ -9,15 +9,15 @@ public class DistanceConvertor {
         double kmStatute = Support.round(miles * this.STATUTE_MILE, 3);
         double kmNautical = Support.round(miles * this.NAUTICAL_MILE, 3);
         View.toDisplay(String.format("You wanna convert %s miles" +
-                "\nIf needed statute miles it's = %s" +
-                "\nIf needed nautical it's = %s", miles, kmStatute, kmNautical));
+                "\nIf needed statute miles it's = %s km" +
+                "\nIf needed nautical it's = %s km", miles, kmStatute, kmNautical));
     }
 
     public void kmsToMiles(double kms){
         double milesStatute = Support.round(kms / this.STATUTE_MILE, 3);
         double milesNautical = Support.round(kms / this.NAUTICAL_MILE, 3);
         View.toDisplay(String.format("You wanna convert %s kms" +
-                "\nIf needed statute miles it's = %s" +
-                "\nIf needed nautical it's = %s", kms, milesStatute, milesNautical));
+                "\nIf needed statute miles it's = %s miles" +
+                "\nIf needed nautical miles it's = %s miles", kms, milesStatute, milesNautical));
     }
 }
