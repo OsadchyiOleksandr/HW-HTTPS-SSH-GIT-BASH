@@ -12,4 +12,12 @@ public class DistanceConvertor {
                 "\nIf needed statute miles it's = %s" +
                 "\nIf needed nautical it's = %s", miles, kmStatute, kmNautical));
     }
+
+    public void kmsToMiles(double kms){
+        double milesStatute = Support.round(kms / this.STATUTE_MILE, 3);
+        double milesNautical = Support.round(kms / this.NAUTICAL_MILE, 3);
+        View.toDisplay(String.format("You wanna convert %s kms" +
+                "\nIf needed statute miles it's = %s" +
+                "\nIf needed nautical it's = %s", kms, milesStatute, milesNautical));
+    }
 }
